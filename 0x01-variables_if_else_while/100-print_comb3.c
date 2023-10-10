@@ -3,7 +3,7 @@
 /**
  * main - entry point
  *
- * Description: ' program prints combinations of two digits' 
+ * Description: ' program prints combinations of two digits'
  *
  * Return: Always 0 (Success)
 */
@@ -35,4 +35,3 @@ int main(void)
 	putchar('\n');
 	return (0);
 }
-
