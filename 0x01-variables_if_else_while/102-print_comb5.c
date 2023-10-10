@@ -36,5 +36,5 @@ int main(void)
 		firstDigit++;
 	}
 	putchar('\n');
-	putchar (0);
+	return (0);
 }
