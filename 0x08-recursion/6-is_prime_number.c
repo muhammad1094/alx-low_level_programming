@@ -4,10 +4,11 @@
 /**
  * is_prime_number - returns 1 if the input integer is a prime number
  * otherwise return 0
- * @n:
- * Return:
+ * @n: int
+ * @othrn: int
+ * check_prime - checks if the input integer is a prime number
+ * Return: 1 if the input number is prime, 0 otherwise
 */
-
 int check_prime(int n, int othrn);
 int is_prime_number(int n)
 {
