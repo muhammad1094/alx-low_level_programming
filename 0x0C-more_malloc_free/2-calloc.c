@@ -8,7 +8,7 @@
  * @b: constant
  * @n: max bytes to use
  *
- * Return: s
+ * Return: pointer to the memory area s
 */
 
 char *_memset(char *s, char b, unsigned int n)
@@ -25,7 +25,7 @@ char *_memset(char *s, char b, unsigned int n)
  * @nmemb: array length
  * @size: size of each element
  *
- * Return: pointer
+ * Return: pointer to the allocated memory
 */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
@@ -34,11 +34,11 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (size == 0 || nmemb == 0)
 		return (NULL);
-	m = malloc(sizeof(int) * nmemb);
+	m = malloc(nmemb * size);
 
-	if (m == 0)
+	if (m == NULL)
 		return (NULL);
-	_memset(m, 0, sizeof(int) * nmemb);
+	_memset(m, 0, nmemb * size);
 
 	return (m);
 }
