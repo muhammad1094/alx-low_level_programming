@@ -7,22 +7,21 @@
  * free_listint2 - free list of ints
  * @head: address pointer to first node
  *
- * @Return: void
+ * Description: sets the head to NULL
 */
 
 void free_listint2(listint_t **head)
 {
-	listint_t *node, *temp;
+	listint_t *tmp;
 
-	if (!head)
+	if (head == NULL)
 		return;
 
-	node = *head;
-	while (node)
+	while (*head)
 	{
-		temp = node;
-		node = node->next;
-		free(temp);
+		tmp = (*head)->next;
+		free(*head);
+		*head = tmp;
 	}
-	*head = NULL;
+	head = NULL;
 }
