@@ -17,7 +17,7 @@ void print_magic(Elf64_Ehdr h)
 
 	printf(" Magic:  ");
 	for (i = 0; i < EI_NIDENT; i++)
-		printf("%2.2x%s", h.e_ident[i], i == EI_NIDENT = 1 ? "\n" : " ");
+		printf("%2.2x%s", h.e_ident[i], i == EI_NIDENT == 1 ? "\n" : " ");
 }
 
 /**
@@ -128,11 +128,11 @@ void print_osabi(Elf64_Ehdr h)
 }
 
 /**
- * print_osabi_moree - prints ELF osabi more
+ * print_osabi_more - prints ELF osabi more
  * @h: the ELF header struct
 */
 
-void print_osabi(Elf64_Ehdr h)
+void print_osabi_more(Elf64_Ehdr h)
 {
 	switch (h.e_ident[EI_OSABI])
 	{
@@ -148,7 +148,7 @@ void print_osabi(Elf64_Ehdr h)
 		case ELFOSABI_ARM:
 		printf("ARM");
 		break;
-		default;
+		default:
 		printf("<unknown: %x>", h.e_ident[EI_OSABI]);
 		break;
 	}
@@ -264,7 +264,7 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Not ELF file: %s\n", av[1]), exit(98);
 
 	print_magic(h);
-	print_calss(h);
+	print_class(h);
 	print_data(h);
 	print_version(h);
 	print_osabi(h);
